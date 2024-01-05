@@ -32,5 +32,10 @@ namespace QuanLyBanCaPhe.BUS
         {
             return dalSanPham.xoaSanPham(MaSanPham);
         }
+
+        public DataTable getSanPhamByKeyWord(string TenSanPham)
+        {
+            return dalSanPham.getSanPhamByKeyWord(TenSanPham);
+        }
     }
 }

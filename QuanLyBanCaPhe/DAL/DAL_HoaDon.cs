@@ -48,6 +48,37 @@ namespace QuanLyBanCaPhe.DAL
             return dtHoaDon;
         }
 
+        public int getMaxMaHoaDon()
+        {
+            int maxMaHoaDon = 0;
+            try
+            {
+                _conn.Open();
+
+                string SQL = "select TOP 1 MaHoaDon from HoaDon order by MaHoaDon desc";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        maxMaHoaDon = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return maxMaHoaDon;
+        }
+
 
         public bool themHoaDon(DateTime NgayLap, string MaNhanVien)
         {

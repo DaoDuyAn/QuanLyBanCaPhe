@@ -1,10 +1,12 @@
 ﻿using QuanLyBanCaPhe.BUS;
+using QuanLyBanCaPhe.DTO;
 using QuanLyBanCaPhe.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +18,17 @@ namespace QuanLyBanCaPhe
     {
         BUS_LoaiSanPham busLoaiSP = new BUS_LoaiSanPham();
         BUS_SanPham busSP = new BUS_SanPham();
-        public FormBanHang()
+        BUS_HoaDon busHD = new BUS_HoaDon();
+        BUS_ChiTietHoaDon busCTHD = new BUS_ChiTietHoaDon();
+
+        public DTO_NhanVien nv { set; get; }
+
+        public FormBanHang(DTO_NhanVien nv)
         {
             InitializeComponent();
+
+            this.nv = nv;
+
             AddCategory();
             ProductPanel.Controls.Clear();
             LoadProducts(1);
@@ -101,6 +111,23 @@ namespace QuanLyBanCaPhe
             };
 
             ProductPanel.Controls.Add(product);
+
+            product.onSelect += (sender, e) =>
+            {
+                var wdg = (ucProduct)sender;
+                foreach (DataGridViewRow item in dgvGioHang.Rows)
+                {
+                    // Nếu sản phẩm đã tồn tại thì tăng số lượng lên 1
+                    if (Convert.ToInt32(item.Cells["dgvID"].Value) == wdg.MaSP)
+                    {
+                        item.Cells["dgvSL"].Value = int.Parse(item.Cells["dgvSL"].Value.ToString()) + 1;
+
+                        return;
+                    }
+                }
+                dgvGioHang.Rows.Add(new object[] { 0, wdg.MaSP, wdg.TenSP, wdg.GiaBan, 1 });
+                TinhTongTienVaSoLuong();
+            };
         }
 
         public void LoadProducts(int MaLoaiSP)
@@ -116,6 +143,17 @@ namespace QuanLyBanCaPhe
 
         private void cbbPTTT_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Thanh toán bằng tiền mặt
+            if (cbbPTTT.SelectedIndex == 0)
+            {
+                lblKhachDua.Visible = true;
+                numKhachDua.Visible = true;
+
+                lblCanTra.Visible = true;
+                numCanTra.Visible = true;
+            }
+
+            // Thanh toán bằng thẻ
             if (cbbPTTT.SelectedIndex == 1)
             {
                 lblKhachDua.Visible = false;
@@ -124,6 +162,105 @@ namespace QuanLyBanCaPhe
                 lblCanTra.Visible = false;
                 numCanTra.Visible = false;
             }
+
+
+        }
+
+        private void dgvGioHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int cnt = 0;
+
+            foreach (DataGridViewRow row in dgvGioHang.Rows)
+            {
+                cnt++;
+                row.Cells[0].Value = cnt;
+            }
+        }
+
+        private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columnName = dgvGioHang.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "dgvXoa")
+            {
+                DataGridViewRow selectedRow = dgvGioHang.Rows[e.RowIndex];
+                dgvGioHang.Rows.Remove(selectedRow);
+
+            }
+
+            if (columnName == "dgvTang")
+            {
+                int currentQuantity = Convert.ToInt32(dgvGioHang.Rows[e.RowIndex].Cells["dgvSL"].Value);
+                dgvGioHang.Rows[e.RowIndex].Cells["dgvSL"].Value = currentQuantity + 1;
+            }
+
+            if (columnName == "dgvGiam")
+            {
+                int currentQuantity = Convert.ToInt32(dgvGioHang.Rows[e.RowIndex].Cells["dgvSL"].Value);
+
+                if (currentQuantity > 1)
+                {
+                    dgvGioHang.Rows[e.RowIndex].Cells["dgvSL"].Value = currentQuantity - 1;
+                }
+            }
+
+            TinhTongTienVaSoLuong();
+        }
+
+        private void TinhTongTienVaSoLuong()
+        {
+            long tongTien = 0;
+            int tongSoLuong = 0;
+
+            foreach (DataGridViewRow row in dgvGioHang.Rows)
+            {
+                int soLuong = Convert.ToInt32(row.Cells["dgvSL"].Value);
+                long donGia = Convert.ToInt64(row.Cells["dgvGia"].Value);
+
+                tongSoLuong += soLuong;
+                tongTien += soLuong * donGia;
+            }
+
+            numTongSL.Text = tongSoLuong.ToString();
+            numTongTien.Text = tongTien.ToString();
+        }
+
+        private void numKhachDua_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                long tongTien = (long)numTongTien.Value;
+                long khachDua = (long)numKhachDua.Value;
+
+                numCanTra.Value = khachDua - tongTien;
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            bool themHD = busHD.themHoaDon(DateTime.Now, nv.MaNhanVien);
+            int maHD = busHD.getMaxMaHoaDon();
+
+            foreach (DataGridViewRow row in dgvGioHang.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    int maSanPham = Convert.ToInt32(row.Cells["dgvID"].Value);
+                    int soLuong = Convert.ToInt32(row.Cells["dgvSL"].Value);
+                    long donGia = Convert.ToInt64(row.Cells["dgvGia"].Value);
+
+                    bool themCTHD = busCTHD.themCTHD(maHD, maSanPham, soLuong, donGia);
+                }
+            }
+
+            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            numTongTien.Value = 0;
+            numTongSL.Value = 0;
+            numCanTra.Value = 0;
+            numKhachDua.Value = 0;
+
+            dgvGioHang.Rows.Clear();
         }
     }
 }

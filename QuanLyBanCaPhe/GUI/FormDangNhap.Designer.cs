@@ -32,7 +32,7 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
             label1 = new Label();
-            button1 = new Button();
+            btnDN = new Button();
             txtmk = new TextBox();
             txttdn = new TextBox();
             pictureBox1 = new PictureBox();
@@ -48,7 +48,7 @@
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnDN);
             panel1.Controls.Add(txtmk);
             panel1.Controls.Add(txttdn);
             panel1.Controls.Add(pictureBox1);
@@ -98,18 +98,19 @@
             label1.TabIndex = 6;
             label1.Text = "Tên đăng nhập:";
             // 
-            // button1
+            // btnDN
             // 
-            button1.Anchor = AnchorStyles.Top;
-            button1.BackColor = Color.FromArgb(136, 33, 6);
-            button1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(158, 658);
-            button1.Name = "button1";
-            button1.Size = new Size(314, 67);
-            button1.TabIndex = 5;
-            button1.Text = "Đăng nhập";
-            button1.UseVisualStyleBackColor = false;
+            btnDN.Anchor = AnchorStyles.Top;
+            btnDN.BackColor = Color.FromArgb(136, 33, 6);
+            btnDN.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDN.ForeColor = Color.White;
+            btnDN.Location = new Point(158, 658);
+            btnDN.Name = "btnDN";
+            btnDN.Size = new Size(314, 67);
+            btnDN.TabIndex = 5;
+            btnDN.Text = "Đăng nhập";
+            btnDN.UseVisualStyleBackColor = false;
+            btnDN.Click += btnDN_Click;
             // 
             // txtmk
             // 
@@ -134,7 +135,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.Image = Properties.Resources.hl_logo;
-            pictureBox1.Location = new Point(169, 58);
+            pictureBox1.Location = new Point(203, 64);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(269, 250);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -148,6 +149,7 @@
             ClientSize = new Size(684, 862);
             Controls.Add(panel1);
             Name = "FormDangNhap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDangNhap";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -162,7 +164,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label label2;
         private Label label1;
-        private Button button1;
+        private Button btnDN;
         private TextBox txtmk;
         private TextBox txttdn;
         private PictureBox pictureBox1;

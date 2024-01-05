@@ -22,6 +22,11 @@ namespace QuanLyBanCaPhe.BUS
             return dalHoaDon.getHoaDonByMaNhanVien(MaNhanVien);
         }
 
+        public int getMaxMaHoaDon()
+        {
+            return dalHoaDon.getMaxMaHoaDon();
+        }
+
         public bool themHoaDon(DateTime NgayLap, string MaNhanVien)
         {
             return dalHoaDon.themHoaDon(NgayLap, MaNhanVien);

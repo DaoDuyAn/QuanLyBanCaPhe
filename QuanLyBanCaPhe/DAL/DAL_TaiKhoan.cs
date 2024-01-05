@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using QuanLyBanCaPhe.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,87 @@ namespace QuanLyBanCaPhe.DAL
             DataTable dtTaiKhoan = new DataTable();
             da.Fill(dtTaiKhoan);
             return dtTaiKhoan;
+        }
+
+        public DTO_TaiKhoan kiemTraDN(string TenDangNhap, string MatKhau)
+        {
+            DTO_TaiKhoan tk = null;
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenDangNhap", TenDangNhap);
+                    cmd.Parameters.AddWithValue("@MatKhau", MatKhau);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tk = new DTO_TaiKhoan
+                            {
+                                MaTaiKhoan = reader["MaTaiKhoan"].ToString(),
+                                TenDangNhap = reader["TenDangNhap"].ToString(),
+                                MatKhau = reader["MatKhau"].ToString(),
+                                MaNhanVien = reader["MaNhanVien"].ToString(),
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return tk;
+        }
+
+        public DTO_TaiKhoan getTKByTenDN(string TenDangNhap)
+        {
+            DTO_TaiKhoan tk = null;
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenDangNhap", TenDangNhap);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tk = new DTO_TaiKhoan
+                            {
+                                MaTaiKhoan = reader["MaTaiKhoan"].ToString(),
+                                TenDangNhap = reader["TenDangNhap"].ToString(),
+                                MatKhau = reader["MatKhau"].ToString(),
+                                MaNhanVien = reader["MaNhanVien"].ToString(),
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return tk;
         }
 
         public bool themTaiKhoan(string MaTaiKhoan, string TenDangNhap, string MatKhau, string MaNhanVien)

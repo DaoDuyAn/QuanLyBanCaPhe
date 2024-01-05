@@ -1,4 +1,5 @@
 ﻿using QuanLyBanCaPhe.BUS;
+using QuanLyBanCaPhe.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,68 +16,35 @@ namespace QuanLyBanCaPhe.GUI
     public partial class FormQLHD : Form
     {
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
-        public FormQLHD()
+        BUS_ChiTietHoaDon busCTHD = new BUS_ChiTietHoaDon();
+
+        public DTO_NhanVien nv { set; get; }
+        public FormQLHD(DTO_NhanVien nv)
         {
             InitializeComponent();
-            LoadHoaDon();
+            this.nv = nv;
+
+            LoadDSHD();
         }
 
-        void LoadHoaDon()
-        {
-            dgvHD.DataSource = busHoaDon.getAllHoaDon();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            bool them = busHoaDon.themHoaDon(DateTime.Now, "NV1");
-            if (them)
-            {
-                dgvHD.DataSource = null;
-                dgvHD.DataSource = busHoaDon.getAllHoaDon();
-            }
-            else
-            {
-                // Xử lý khi thêm không thành công nếu cần
-                MessageBox.Show("Thêm hóa đơn không thành công!");
-            }
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            bool them = busHoaDon.suaHoaDon(15, DateTime.Now, "NV2");
-            if (them)
-            {
-                dgvHD.DataSource = null;
-                dgvHD.DataSource = busHoaDon.getAllHoaDon();
-            }
-            else
-            {
-                // Xử lý khi thêm không thành công nếu cần
-                MessageBox.Show("Thêm hóa đơn không thành công!");
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            bool them = busHoaDon.xoaHoaDon(15);
-            if (them)
-            {
-                dgvHD.DataSource = null;
-                dgvHD.DataSource = busHoaDon.getAllHoaDon();
-            }
-            else
-            {
-                // Xử lý khi thêm không thành công nếu cần
-                MessageBox.Show("Thêm hóa đơn không thành công!");
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        void LoadDSHD()
         {
             dgvHD.DataSource = null;
-            dgvHD.DataSource = busHoaDon.getHoaDonByMaNhanVien("NV1");
+            dgvHD.DataSource = busHoaDon.getHoaDonByMaNhanVien(nv.MaNhanVien);
+        }
+
+        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columnName = dgvHD.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "dgvChiTiet")
+            {
+                int maHD = Convert.ToInt32(dgvHD.Rows[e.RowIndex].Cells["dgvMaHD"].Value);
+
+                lblMaHD.Text = maHD.ToString();
+                dgvCTHD.DataSource = null;
+                dgvCTHD.DataSource = busCTHD.getCTHD(maHD);
+            }
         }
     }
 }

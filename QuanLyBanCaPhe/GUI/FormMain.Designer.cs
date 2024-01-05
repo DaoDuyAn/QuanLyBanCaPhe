@@ -30,22 +30,24 @@
         {
             panelMenu = new Panel();
             btnDX = new FontAwesome.Sharp.IconButton();
-            btnTK = new FontAwesome.Sharp.IconButton();
             btnQLHD = new FontAwesome.Sharp.IconButton();
             btnBH = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panel1 = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             labelName = new Label();
             lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelShadow = new Panel();
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
+            btnTK = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
             panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,7 +74,7 @@
             btnDX.FlatStyle = FlatStyle.Flat;
             btnDX.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnDX.ForeColor = Color.Gainsboro;
-            btnDX.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            btnDX.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
             btnDX.IconColor = Color.Gainsboro;
             btnDX.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDX.IconSize = 50;
@@ -86,28 +88,7 @@
             btnDX.TextAlign = ContentAlignment.MiddleLeft;
             btnDX.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDX.UseVisualStyleBackColor = true;
-            // 
-            // btnTK
-            // 
-            btnTK.Dock = DockStyle.Top;
-            btnTK.FlatAppearance.BorderSize = 0;
-            btnTK.FlatStyle = FlatStyle.Flat;
-            btnTK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTK.ForeColor = Color.Gainsboro;
-            btnTK.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            btnTK.IconColor = Color.Gainsboro;
-            btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTK.IconSize = 50;
-            btnTK.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTK.Location = new Point(0, 340);
-            btnTK.Name = "btnTK";
-            btnTK.Padding = new Padding(10, 0, 20, 0);
-            btnTK.Size = new Size(376, 80);
-            btnTK.TabIndex = 5;
-            btnTK.Text = "Thống kê";
-            btnTK.TextAlign = ContentAlignment.MiddleLeft;
-            btnTK.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTK.UseVisualStyleBackColor = true;
+            btnDX.Click += btnDX_Click;
             // 
             // btnQLHD
             // 
@@ -116,7 +97,7 @@
             btnQLHD.FlatStyle = FlatStyle.Flat;
             btnQLHD.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnQLHD.ForeColor = Color.Gainsboro;
-            btnQLHD.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            btnQLHD.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
             btnQLHD.IconColor = Color.Gainsboro;
             btnQLHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnQLHD.IconSize = 50;
@@ -140,7 +121,7 @@
             btnBH.FlatStyle = FlatStyle.Flat;
             btnBH.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnBH.ForeColor = Color.Gainsboro;
-            btnBH.IconChar = FontAwesome.Sharp.IconChar.CircleNotch;
+            btnBH.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             btnBH.IconColor = Color.Gainsboro;
             btnBH.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBH.IconSize = 50;
@@ -179,6 +160,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(136, 33, 6);
+            panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(labelName);
             panel1.Controls.Add(lblTitleChildForm);
             panel1.Controls.Add(iconCurrentChildForm);
@@ -187,6 +169,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1404, 114);
             panel1.TabIndex = 1;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.Anchor = AnchorStyles.Right;
+            iconPictureBox1.BackColor = Color.FromArgb(136, 33, 6);
+            iconPictureBox1.ForeColor = Color.FromArgb(224, 224, 224);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PersonBreastfeeding;
+            iconPictureBox1.IconColor = Color.FromArgb(224, 224, 224);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 59;
+            iconPictureBox1.Location = new Point(1177, 46);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(69, 59);
+            iconPictureBox1.TabIndex = 5;
+            iconPictureBox1.TabStop = false;
             // 
             // labelName
             // 
@@ -255,6 +252,29 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // btnTK
+            // 
+            btnTK.Dock = DockStyle.Top;
+            btnTK.FlatAppearance.BorderSize = 0;
+            btnTK.FlatStyle = FlatStyle.Flat;
+            btnTK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTK.ForeColor = Color.Gainsboro;
+            btnTK.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            btnTK.IconColor = Color.Gainsboro;
+            btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTK.IconSize = 50;
+            btnTK.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTK.Location = new Point(0, 340);
+            btnTK.Name = "btnTK";
+            btnTK.Padding = new Padding(10, 0, 20, 0);
+            btnTK.Size = new Size(376, 80);
+            btnTK.TabIndex = 5;
+            btnTK.Text = "Thống kê";
+            btnTK.TextAlign = ContentAlignment.MiddleLeft;
+            btnTK.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTK.UseVisualStyleBackColor = true;
+            btnTK.Click += btnTK_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -274,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
             panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -285,7 +306,6 @@
         private Panel panelMenu;
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnDX;
-        private FontAwesome.Sharp.IconButton btnTK;
         private FontAwesome.Sharp.IconButton btnQLHD;
         private FontAwesome.Sharp.IconButton btnBH;
         private PictureBox btnHome;
@@ -296,5 +316,7 @@
         private Panel panelDesktop;
         private PictureBox pictureBox1;
         private Label labelName;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconButton btnTK;
     }
 }

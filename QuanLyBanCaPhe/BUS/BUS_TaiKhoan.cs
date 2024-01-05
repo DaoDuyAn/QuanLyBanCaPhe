@@ -1,4 +1,5 @@
 ﻿using QuanLyBanCaPhe.DAL;
+using QuanLyBanCaPhe.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,16 @@ namespace QuanLyBanCaPhe.BUS
         public DataTable getAllTaiKhoan()
         {
             return dalTaiKhoan.getAllTaiKhoan();
+        }
+
+        public DTO_TaiKhoan kiemTraDN(string TenDangNhap, string MatKhau)
+        {
+            return dalTaiKhoan.kiemTraDN(TenDangNhap, MatKhau);
+        }
+
+        public DTO_TaiKhoan getTKByTenDN(string TenDangNhap)
+        {
+            return dalTaiKhoan.getTKByTenDN(TenDangNhap);
         }
 
         public bool themTaiKhoan(string MaTaiKhoan, string TenDangNhap, string MatKhau, string MaNhanVien)

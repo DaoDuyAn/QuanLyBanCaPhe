@@ -19,7 +19,6 @@ namespace QuanLyBanCaPhe.GUI
             InitializeComponent();
         }
 
-
         public int MaSP { get; set; }
 
         public string MaLoaiSP { get; set; }

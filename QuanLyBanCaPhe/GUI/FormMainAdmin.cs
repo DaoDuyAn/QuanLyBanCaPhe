@@ -1,6 +1,5 @@
 ﻿using FontAwesome.Sharp;
 using QuanLyBanCaPhe.DTO;
-using QuanLyBanCaPhe.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,21 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyBanCaPhe
+namespace QuanLyBanCaPhe.GUI
 {
-    public partial class FormMain : Form
+    public partial class FormMainAdmin : Form
     {
-
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-
         public DTO_NhanVien nv { set; get; }
-        public FormMain(DTO_NhanVien nv)
+        public FormMainAdmin(DTO_NhanVien nv)
         {
             InitializeComponent();
-
             this.nv = nv;
 
             leftBorderBtn = new Panel();
@@ -34,7 +30,6 @@ namespace QuanLyBanCaPhe
             this.WindowState = FormWindowState.Maximized;
 
             labelName.Text = nv.TenNhanVien;
-
         }
 
         //Methods
@@ -111,12 +106,6 @@ namespace QuanLyBanCaPhe
             lblTitleChildForm.Text = "Trang chủ";
         }
 
-        private void btnBH_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, Color.FromArgb(255, 255, 255));
-            OpenChildForm(new FormBanHang(nv));
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (currentChildForm != null)
@@ -127,12 +116,6 @@ namespace QuanLyBanCaPhe
             Reset();
         }
 
-        private void btnQLHD_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, Color.FromArgb(255, 255, 255));
-            OpenChildForm(new FormQLHD(nv));
-        }
-
         private void btnDX_Click(object sender, EventArgs e)
         {
             FormDangNhap formDN = new FormDangNhap();
@@ -140,8 +123,16 @@ namespace QuanLyBanCaPhe
             this.Hide();
         }
 
-        private void btnTK_Click(object sender, EventArgs e)
+        private void btnQLSP_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+            OpenChildForm(new FormQLSP_Admin());
+        }
+
+        private void btnQLLSP_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+          //  OpenChildForm(new FormQLLSP_Admin());
         }
     }
 }

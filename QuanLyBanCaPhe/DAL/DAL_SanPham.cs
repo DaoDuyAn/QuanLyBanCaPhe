@@ -47,6 +47,36 @@ namespace QuanLyBanCaPhe.DAL
             return dtSanPham;
         }
 
+        public DataTable getSanPhamByKeyWord(string TenSanPham)
+        {
+            DataTable dtSanPham = new DataTable();
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM SanPham WHERE  TenSanPham LIKE '%' + @TenSanPham + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenSanPham", TenSanPham);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dtSanPham);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dtSanPham;
+        }
+
+
 
         public bool themSanPham(string TenSanPham, string AnhSanPham, long GiaBan, int MaLoaiSP)
         {

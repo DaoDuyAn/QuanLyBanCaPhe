@@ -1,3 +1,5 @@
+using QuanLyBanCaPhe.GUI;
+
 namespace QuanLyBanCaPhe
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace QuanLyBanCaPhe
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMain());
+            Application.Run(new FormDangNhap());
         }
     }
 }
