@@ -140,5 +140,17 @@ namespace QuanLyBanCaPhe.GUI
             ActivateButton(sender, Color.FromArgb(255, 255, 255));
             OpenChildForm(new FormQLHD_Admin());
         }
+
+        private void btnQLNV_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+            OpenChildForm(new FormQLNV_Admin());
+        }
+
+        private void btnQLCV_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+            OpenChildForm(new FormQLCV_Admin());
+        }
     }
 }

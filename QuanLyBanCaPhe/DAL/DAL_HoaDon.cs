@@ -13,7 +13,7 @@ namespace QuanLyBanCaPhe.DAL
     {
         public DataTable getAllHoaDon()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM HoaDon", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM HoaDon ORDER BY MaHoaDon DESC", _conn);
             DataTable dtHoaDon = new DataTable();
             da.Fill(dtHoaDon);
             return dtHoaDon;
@@ -26,7 +26,7 @@ namespace QuanLyBanCaPhe.DAL
             {
                 _conn.Open();
 
-                string SQL = "SELECT * FROM HoaDon WHERE MaNhanVien = @MaNhanVien";
+                string SQL = "SELECT * FROM HoaDon WHERE MaNhanVien = @MaNhanVien ORDER BY MaHoaDon DESC";
 
                 using (SqlCommand cmd = new SqlCommand(SQL, _conn))
                 {

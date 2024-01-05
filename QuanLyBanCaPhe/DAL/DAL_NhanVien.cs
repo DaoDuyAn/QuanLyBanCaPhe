@@ -60,6 +60,36 @@ namespace QuanLyBanCaPhe.DAL
             return nhanVien;
         }
 
+        public DataTable getNhanVienByKeyWord(string key)
+        {
+            DataTable dtNhanVien = new DataTable();
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM NhanVien WHERE TenNhanVien LIKE '%' + @TenNhanVien + '%' OR MaNhanVien LIKE '%' + @MaNhanVien + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenNhanVien", key);
+                    cmd.Parameters.AddWithValue("@MaNhanVien", key);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dtNhanVien);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dtNhanVien;
+        }
+
 
         public bool themNhanVien(string MaNhanVien, string TenNhanVien, DateTime NgaySinh, bool GioiTinh, string MaChucVu)
         {

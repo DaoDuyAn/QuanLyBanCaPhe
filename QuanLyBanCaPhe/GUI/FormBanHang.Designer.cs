@@ -285,7 +285,7 @@
             dgvGioHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvGioHang.ColumnHeadersHeight = 50;
             dgvGioHang.Columns.AddRange(new DataGridViewColumn[] { dgvSTT, dgvID, dgvTenSP, dgvGia, dgvSL, dgvTang, dgvGiam, dgvXoa });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = SystemColors.Window;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
@@ -299,7 +299,7 @@
             dgvGioHang.Name = "dgvGioHang";
             dgvGioHang.ReadOnly = true;
             dgvGioHang.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = Color.Black;
@@ -307,6 +307,7 @@
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             dgvGioHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvGioHang.RowHeadersVisible = false;
             dgvGioHang.RowHeadersWidth = 62;
             dgvGioHang.RowTemplate.Height = 50;
             dgvGioHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

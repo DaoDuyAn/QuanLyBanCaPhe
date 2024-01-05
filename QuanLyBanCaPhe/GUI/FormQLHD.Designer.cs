@@ -51,11 +51,11 @@
             lblMaHD = new Label();
             label2 = new Label();
             dgvCTHD = new DataGridView();
-            dTOChiTietHoaDonBindingSource = new BindingSource(components);
             maHoaDonDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             maSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvSL = new DataGridViewTextBoxColumn();
             dgvGia = new DataGridViewTextBoxColumn();
+            dTOChiTietHoaDonBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dgvHD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dTOHoaDonBindingSource).BeginInit();
             panel2.SuspendLayout();
@@ -209,7 +209,7 @@
             lblMaHD.Anchor = AnchorStyles.Top;
             lblMaHD.AutoSize = true;
             lblMaHD.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMaHD.Location = new Point(928, 79);
+            lblMaHD.Location = new Point(928, 31);
             lblMaHD.Name = "lblMaHD";
             lblMaHD.Size = new Size(0, 48);
             lblMaHD.TabIndex = 3;
@@ -267,10 +267,6 @@
             dgvCTHD.Size = new Size(1450, 301);
             dgvCTHD.TabIndex = 0;
             // 
-            // dTOChiTietHoaDonBindingSource
-            // 
-            dTOChiTietHoaDonBindingSource.DataSource = typeof(DTO.DTO_ChiTietHoaDon);
-            // 
             // maHoaDonDataGridViewTextBoxColumn1
             // 
             maHoaDonDataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -306,6 +302,10 @@
             dgvGia.MinimumWidth = 8;
             dgvGia.Name = "dgvGia";
             dgvGia.ReadOnly = true;
+            // 
+            // dTOChiTietHoaDonBindingSource
+            // 
+            dTOChiTietHoaDonBindingSource.DataSource = typeof(DTO.DTO_ChiTietHoaDon);
             // 
             // FormQLHD
             // 

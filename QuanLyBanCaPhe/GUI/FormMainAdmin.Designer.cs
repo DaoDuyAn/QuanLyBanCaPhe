@@ -35,7 +35,7 @@
             btnTK = new FontAwesome.Sharp.IconButton();
             btnQLSP = new FontAwesome.Sharp.IconButton();
             btnQLLSP = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            btnQLNV = new FontAwesome.Sharp.IconButton();
             btnQLCV = new FontAwesome.Sharp.IconButton();
             btnQLHD = new FontAwesome.Sharp.IconButton();
             btnQLTK = new FontAwesome.Sharp.IconButton();
@@ -85,7 +85,7 @@
             panelMenu.Controls.Add(btnTK);
             panelMenu.Controls.Add(btnQLSP);
             panelMenu.Controls.Add(btnQLLSP);
-            panelMenu.Controls.Add(iconButton2);
+            panelMenu.Controls.Add(btnQLNV);
             panelMenu.Controls.Add(btnQLCV);
             panelMenu.Controls.Add(btnQLHD);
             panelMenu.Controls.Add(btnQLTK);
@@ -189,28 +189,29 @@
             btnQLLSP.UseVisualStyleBackColor = false;
             btnQLLSP.Click += btnQLLSP_Click;
             // 
-            // iconButton2
+            // btnQLNV
             // 
-            iconButton2.BackColor = Color.FromArgb(136, 33, 6);
-            iconButton2.Dock = DockStyle.Top;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton2.ForeColor = Color.Gainsboro;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
-            iconButton2.IconColor = Color.Gainsboro;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 50;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(0, 420);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(10, 0, 20, 0);
-            iconButton2.Size = new Size(376, 80);
-            iconButton2.TabIndex = 9;
-            iconButton2.Text = "Quản lý nhân viên";
-            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = false;
+            btnQLNV.BackColor = Color.FromArgb(136, 33, 6);
+            btnQLNV.Dock = DockStyle.Top;
+            btnQLNV.FlatAppearance.BorderSize = 0;
+            btnQLNV.FlatStyle = FlatStyle.Flat;
+            btnQLNV.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnQLNV.ForeColor = Color.Gainsboro;
+            btnQLNV.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            btnQLNV.IconColor = Color.Gainsboro;
+            btnQLNV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnQLNV.IconSize = 50;
+            btnQLNV.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQLNV.Location = new Point(0, 420);
+            btnQLNV.Name = "btnQLNV";
+            btnQLNV.Padding = new Padding(10, 0, 20, 0);
+            btnQLNV.Size = new Size(376, 80);
+            btnQLNV.TabIndex = 9;
+            btnQLNV.Text = "Quản lý nhân viên";
+            btnQLNV.TextAlign = ContentAlignment.MiddleLeft;
+            btnQLNV.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnQLNV.UseVisualStyleBackColor = false;
+            btnQLNV.Click += btnQLNV_Click;
             // 
             // btnQLCV
             // 
@@ -234,6 +235,7 @@
             btnQLCV.TextAlign = ContentAlignment.MiddleLeft;
             btnQLCV.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnQLCV.UseVisualStyleBackColor = false;
+            btnQLCV.Click += btnQLCV_Click;
             // 
             // btnQLHD
             // 
@@ -417,7 +419,7 @@
         private Panel panelShadow;
         private FontAwesome.Sharp.IconButton btnQLSP;
         private FontAwesome.Sharp.IconButton btnQLLSP;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnQLNV;
         private FontAwesome.Sharp.IconButton btnQLCV;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label labelName;

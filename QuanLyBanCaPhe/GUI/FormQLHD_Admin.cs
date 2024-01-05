@@ -53,5 +53,30 @@ namespace QuanLyBanCaPhe.GUI
                 lblTongTien.Text = tongTien.ToString() + " đ";
             }
         }
+
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+
+            if (keyword == "")
+            {
+                MessageBox.Show("Bạn cần nhập mã nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataTable dt = busHoaDon.getHoaDonByMaNhanVien(keyword);
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvHD.DataSource = null;
+                dgvHD.DataSource = dt;
+
+                txtTimKiem.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

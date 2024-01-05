@@ -32,12 +32,15 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLHD_Admin));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnTK = new Button();
+            txtTimKiem = new TextBox();
             dgvHD = new DataGridView();
             dgvMaHD = new DataGridViewTextBoxColumn();
             ngayLapDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -50,12 +53,12 @@
             lblTongTien = new Label();
             label2 = new Label();
             dgvCTHD = new DataGridView();
-            dTOChiTietHoaDonBindingSource = new BindingSource(components);
-            label3 = new Label();
             maHoaDonDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             maSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvSL = new DataGridViewTextBoxColumn();
             dgvGia = new DataGridViewTextBoxColumn();
+            dTOChiTietHoaDonBindingSource = new BindingSource(components);
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dTOHoaDonBindingSource).BeginInit();
@@ -66,6 +69,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTK);
+            panel1.Controls.Add(txtTimKiem);
             panel1.Controls.Add(dgvHD);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -73,6 +78,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1428, 502);
             panel1.TabIndex = 0;
+            // 
+            // btnTK
+            // 
+            btnTK.Anchor = AnchorStyles.Top;
+            btnTK.BackColor = Color.FromArgb(235, 84, 81);
+            btnTK.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTK.ForeColor = Color.White;
+            btnTK.Location = new Point(842, 41);
+            btnTK.Name = "btnTK";
+            btnTK.Size = new Size(204, 48);
+            btnTK.TabIndex = 21;
+            btnTK.Text = "Tìm kiếm";
+            btnTK.UseVisualStyleBackColor = false;
+            btnTK.Click += btnTK_Click;
+            // 
+            // txtTimKiem
+            // 
+            txtTimKiem.Anchor = AnchorStyles.Top;
+            txtTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTimKiem.Location = new Point(381, 46);
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.PlaceholderText = "Nhập mã nhân viên...";
+            txtTimKiem.Size = new Size(442, 39);
+            txtTimKiem.TabIndex = 20;
             // 
             // dgvHD
             // 
@@ -107,12 +136,20 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgvHD.DefaultCellStyle = dataGridViewCellStyle4;
             dgvHD.EnableHeadersVisualStyles = false;
-            dgvHD.Location = new Point(118, 113);
+            dgvHD.Location = new Point(118, 184);
             dgvHD.Name = "dgvHD";
             dgvHD.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvHD.RowHeadersVisible = false;
             dgvHD.RowHeadersWidth = 62;
-            dgvHD.Size = new Size(1208, 362);
+            dgvHD.Size = new Size(1208, 291);
             dgvHD.TabIndex = 3;
             dgvHD.CellClick += dgvHD_CellClick;
             // 
@@ -164,7 +201,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(489, 32);
+            label1.Location = new Point(455, 114);
             label1.Name = "label1";
             label1.Size = new Size(414, 48);
             label1.TabIndex = 2;
@@ -218,35 +255,35 @@
             // 
             dgvCTHD.AllowUserToAddRows = false;
             dgvCTHD.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dgvCTHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dgvCTHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvCTHD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dgvCTHD.AutoGenerateColumns = false;
             dgvCTHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCTHD.BackgroundColor = Color.White;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvCTHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvCTHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvCTHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCTHD.Columns.AddRange(new DataGridViewColumn[] { maHoaDonDataGridViewTextBoxColumn, maSanPhamDataGridViewTextBoxColumn, dgvSL, dgvGia });
             dgvCTHD.DataSource = dTOChiTietHoaDonBindingSource;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Window;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvCTHD.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvCTHD.DefaultCellStyle = dataGridViewCellStyle8;
             dgvCTHD.EnableHeadersVisualStyles = false;
             dgvCTHD.Location = new Point(118, 194);
             dgvCTHD.Name = "dgvCTHD";
@@ -256,21 +293,6 @@
             dgvCTHD.RowTemplate.Height = 33;
             dgvCTHD.Size = new Size(1208, 300);
             dgvCTHD.TabIndex = 6;
-            // 
-            // dTOChiTietHoaDonBindingSource
-            // 
-            dTOChiTietHoaDonBindingSource.DataSource = typeof(DTO.DTO_ChiTietHoaDon);
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(455, 52);
-            label3.Name = "label3";
-            label3.Size = new Size(355, 48);
-            label3.TabIndex = 5;
-            label3.Text = "CHI TIẾT HÓA ĐƠN:";
             // 
             // maHoaDonDataGridViewTextBoxColumn
             // 
@@ -303,6 +325,21 @@
             dgvGia.MinimumWidth = 8;
             dgvGia.Name = "dgvGia";
             dgvGia.ReadOnly = true;
+            // 
+            // dTOChiTietHoaDonBindingSource
+            // 
+            dTOChiTietHoaDonBindingSource.DataSource = typeof(DTO.DTO_ChiTietHoaDon);
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(455, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(355, 48);
+            label3.TabIndex = 5;
+            label3.Text = "CHI TIẾT HÓA ĐƠN:";
             // 
             // FormQLHD_Admin
             // 
@@ -345,5 +382,7 @@
         private DataGridViewTextBoxColumn maSanPhamDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dgvSL;
         private DataGridViewTextBoxColumn dgvGia;
+        private Button btnTK;
+        private TextBox txtTimKiem;
     }
 }

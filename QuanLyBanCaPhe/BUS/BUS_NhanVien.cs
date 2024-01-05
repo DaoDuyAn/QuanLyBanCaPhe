@@ -21,6 +21,11 @@ namespace QuanLyBanCaPhe.BUS
         {
             return dalNhanVien.getNhanVienByMaNhanVien(MaNhanVien);
         }
+
+        public DataTable getNhanVienByKeyWord(string key)
+        {
+            return dalNhanVien.getNhanVienByKeyWord(key);
+        }
         public bool themNhanVien(string MaNhanVien, string TenNhanVien, DateTime NgaySinh, bool GioiTinh, string MaChucVu)
         {
             return dalNhanVien.themNhanVien(MaNhanVien, TenNhanVien, NgaySinh, GioiTinh, MaChucVu);
