@@ -17,6 +17,11 @@ namespace QuanLyBanCaPhe.BUS
             return dalChucVu.getAllChucVu();
         }
 
+        public DataTable getChucVuByKeyWord(string key)
+        {
+            return dalChucVu.getChucVuByKeyWord(key);
+        }
+
         public bool themChucVu(string MaChucVu, string TenChucVu)
         {
             return dalChucVu.themChucVu(MaChucVu, TenChucVu);

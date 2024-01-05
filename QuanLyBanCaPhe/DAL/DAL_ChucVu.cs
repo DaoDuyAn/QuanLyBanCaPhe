@@ -19,6 +19,36 @@ namespace QuanLyBanCaPhe.DAL
             return dtChucVu;
         }
 
+        public DataTable getChucVuByKeyWord(string key)
+        {
+            DataTable dtNhanVien = new DataTable();
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM ChucVu WHERE TenChucVu LIKE '%' + @TenChucVu + '%' OR MaChucVu LIKE '%' + @MaChucVu + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenChucVu", key);
+                    cmd.Parameters.AddWithValue("@MaChucVu", key);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dtNhanVien);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dtNhanVien;
+        }
+
         public bool themChucVu(string MaChucVu, string TenChucVu)
         {
             try
