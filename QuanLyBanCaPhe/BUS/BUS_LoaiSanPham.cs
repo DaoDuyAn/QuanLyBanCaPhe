@@ -17,6 +17,11 @@ namespace QuanLyBanCaPhe.BUS
             return dalLoaiSP.getAllLoaiSP();
         }
 
+        public DataTable getLoaiSanPhamByKeyWord(string TenLoaiSanPham)
+        {
+            return dalLoaiSP.getLoaiSanPhamByKeyWord(TenLoaiSanPham);
+        }
+
         public bool themLoaiSP(string TenLoaiSP)
         {
             return dalLoaiSP.themLoaiSP(TenLoaiSP);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using QuanLyBanCaPhe.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +13,7 @@ namespace QuanLyBanCaPhe.DAL
     {
         public DataTable getAllLoaiSP()
         {
-            DataTable dtHoaDon = new DataTable();
+            DataTable dtLSanPham = new DataTable();
             try
             {
                 _conn.Open();
@@ -23,7 +24,7 @@ namespace QuanLyBanCaPhe.DAL
                 {
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dtHoaDon);
+                    da.Fill(dtLSanPham);
                 }
             }
             catch (Exception e)
@@ -35,8 +36,38 @@ namespace QuanLyBanCaPhe.DAL
                 _conn.Close();
             }
 
-            return dtHoaDon;
+            return dtLSanPham;
         }
+
+        public DataTable getLoaiSanPhamByKeyWord(string TenLoaiSanPham)
+        {
+            DataTable dtLSanPham = new DataTable();
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM LoaiSanPham WHERE  TenLoaiSanPham LIKE '%' + @TenLoaiSanPham + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenLoaiSanPham", TenLoaiSanPham);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dtLSanPham);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dtLSanPham;
+        }
+
 
         public bool themLoaiSP(string TenLoaiSP)
         {

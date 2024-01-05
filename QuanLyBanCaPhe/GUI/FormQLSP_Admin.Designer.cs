@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvSP = new DataGridView();
             maSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tenSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -80,12 +81,22 @@
             dgvSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSP.Columns.AddRange(new DataGridViewColumn[] { maSanPhamDataGridViewTextBoxColumn, tenSanPhamDataGridViewTextBoxColumn, anhSanPhamDataGridViewTextBoxColumn, giaBanDataGridViewTextBoxColumn, maLoaiSPDataGridViewTextBoxColumn });
             dgvSP.DataSource = dTOSanPhamBindingSource;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvSP.DefaultCellStyle = dataGridViewCellStyle2;
             dgvSP.EnableHeadersVisualStyles = false;
             dgvSP.Location = new Point(88, 543);
             dgvSP.Name = "dgvSP";
             dgvSP.ReadOnly = true;
+            dgvSP.RowHeadersVisible = false;
             dgvSP.RowHeadersWidth = 62;
             dgvSP.RowTemplate.Height = 33;
+            dgvSP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSP.Size = new Size(1407, 381);
             dgvSP.TabIndex = 0;
             dgvSP.CellClick += dgvSP_CellClick;

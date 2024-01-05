@@ -1,36 +1,31 @@
 ﻿using QuanLyBanCaPhe.BUS;
-using QuanLyBanCaPhe.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyBanCaPhe.GUI
 {
-    public partial class FormQLHD : Form
+    public partial class FormQLHD_Admin : Form
     {
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
         BUS_ChiTietHoaDon busCTHD = new BUS_ChiTietHoaDon();
-
-        public DTO_NhanVien nv { set; get; }
-        public FormQLHD(DTO_NhanVien nv)
+        public FormQLHD_Admin()
         {
             InitializeComponent();
-            this.nv = nv;
-
             LoadDSHD();
         }
+
 
         void LoadDSHD()
         {
             dgvHD.DataSource = null;
-            dgvHD.DataSource = busHoaDon.getHoaDonByMaNhanVien(nv.MaNhanVien);
+            dgvHD.DataSource = busHoaDon.getAllHoaDon();
         }
 
         private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)

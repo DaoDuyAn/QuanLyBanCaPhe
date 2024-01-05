@@ -256,6 +256,7 @@
             btnQLHD.TextAlign = ContentAlignment.MiddleLeft;
             btnQLHD.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnQLHD.UseVisualStyleBackColor = true;
+            btnQLHD.Click += btnQLHD_Click;
             // 
             // btnQLTK
             // 

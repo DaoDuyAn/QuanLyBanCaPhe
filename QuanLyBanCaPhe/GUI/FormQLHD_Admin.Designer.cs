@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanCaPhe.GUI
 {
-    partial class FormQLHD
+    partial class FormQLHD_Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -33,36 +33,46 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLHD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLHD_Admin));
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            panel1 = new Panel();
             dgvHD = new DataGridView();
             dgvMaHD = new DataGridViewTextBoxColumn();
             ngayLapDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             maNhanVienDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvChiTiet = new DataGridViewImageColumn();
             dTOHoaDonBindingSource = new BindingSource(components);
-            panel2 = new Panel();
             label1 = new Label();
-            panel3 = new Panel();
-            label3 = new Label();
-            lblTongTien = new Label();
             lblMaHD = new Label();
+            panel2 = new Panel();
+            lblTongTien = new Label();
             label2 = new Label();
             dgvCTHD = new DataGridView();
             dTOChiTietHoaDonBindingSource = new BindingSource(components);
-            maHoaDonDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            label3 = new Label();
+            maHoaDonDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             maSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvSL = new DataGridViewTextBoxColumn();
             dgvGia = new DataGridViewTextBoxColumn();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dTOHoaDonBindingSource).BeginInit();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCTHD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dTOChiTietHoaDonBindingSource).BeginInit();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dgvHD);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1428, 502);
+            panel1.TabIndex = 0;
             // 
             // dgvHD
             // 
@@ -97,13 +107,13 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgvHD.DefaultCellStyle = dataGridViewCellStyle4;
             dgvHD.EnableHeadersVisualStyles = false;
-            dgvHD.Location = new Point(74, 81);
+            dgvHD.Location = new Point(118, 113);
             dgvHD.Name = "dgvHD";
             dgvHD.ReadOnly = true;
             dgvHD.RowHeadersVisible = false;
             dgvHD.RowHeadersWidth = 62;
-            dgvHD.Size = new Size(1450, 455);
-            dgvHD.TabIndex = 0;
+            dgvHD.Size = new Size(1208, 362);
+            dgvHD.TabIndex = 3;
             dgvHD.CellClick += dgvHD_CellClick;
             // 
             // dgvMaHD
@@ -149,81 +159,60 @@
             // 
             dTOHoaDonBindingSource.DataSource = typeof(DTO.DTO_HoaDon);
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(dgvHD);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1600, 542);
-            panel2.TabIndex = 7;
-            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(567, 19);
+            label1.Location = new Point(489, 32);
             label1.Name = "label1";
             label1.Size = new Size(414, 48);
-            label1.TabIndex = 1;
+            label1.TabIndex = 2;
             label1.Text = "DANH SÁCH HÓA ĐƠN";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(lblTongTien);
-            panel3.Controls.Add(lblMaHD);
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(dgvCTHD);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 542);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1600, 462);
-            panel3.TabIndex = 8;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(74, 87);
-            label3.Name = "label3";
-            label3.Size = new Size(151, 38);
-            label3.TabIndex = 10;
-            label3.Text = "Tổng tiền:";
-            // 
-            // lblTongTien
-            // 
-            lblTongTien.Anchor = AnchorStyles.Top;
-            lblTongTien.AutoSize = true;
-            lblTongTien.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTongTien.Location = new Point(231, 87);
-            lblTongTien.Name = "lblTongTien";
-            lblTongTien.Size = new Size(0, 38);
-            lblTongTien.TabIndex = 9;
             // 
             // lblMaHD
             // 
             lblMaHD.Anchor = AnchorStyles.Top;
             lblMaHD.AutoSize = true;
             lblMaHD.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMaHD.Location = new Point(928, 79);
+            lblMaHD.Location = new Point(816, 52);
             lblMaHD.Name = "lblMaHD";
             lblMaHD.Size = new Size(0, 48);
-            lblMaHD.TabIndex = 3;
+            lblMaHD.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblTongTien);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(dgvCTHD);
+            panel2.Controls.Add(lblMaHD);
+            panel2.Controls.Add(label3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 502);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1428, 527);
+            panel2.TabIndex = 1;
+            // 
+            // lblTongTien
+            // 
+            lblTongTien.Anchor = AnchorStyles.Top;
+            lblTongTien.AutoSize = true;
+            lblTongTien.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTongTien.Location = new Point(289, 126);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(0, 38);
+            lblTongTien.TabIndex = 8;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(567, 31);
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(118, 126);
             label2.Name = "label2";
-            label2.Size = new Size(355, 48);
-            label2.TabIndex = 2;
-            label2.Text = "CHI TIẾT HÓA ĐƠN:";
+            label2.Size = new Size(151, 38);
+            label2.TabIndex = 7;
+            label2.Text = "Tổng tiền:";
             // 
             // dgvCTHD
             // 
@@ -237,6 +226,7 @@
             dgvCTHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvCTHD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dgvCTHD.AutoGenerateColumns = false;
+            dgvCTHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCTHD.BackgroundColor = Color.White;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(81, 154, 255);
@@ -247,7 +237,7 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
             dgvCTHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvCTHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCTHD.Columns.AddRange(new DataGridViewColumn[] { maHoaDonDataGridViewTextBoxColumn1, maSanPhamDataGridViewTextBoxColumn, dgvSL, dgvGia });
+            dgvCTHD.Columns.AddRange(new DataGridViewColumn[] { maHoaDonDataGridViewTextBoxColumn, maSanPhamDataGridViewTextBoxColumn, dgvSL, dgvGia });
             dgvCTHD.DataSource = dTOChiTietHoaDonBindingSource;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = SystemColors.Window;
@@ -258,31 +248,40 @@
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dgvCTHD.DefaultCellStyle = dataGridViewCellStyle7;
             dgvCTHD.EnableHeadersVisualStyles = false;
-            dgvCTHD.Location = new Point(74, 149);
+            dgvCTHD.Location = new Point(118, 194);
             dgvCTHD.Name = "dgvCTHD";
             dgvCTHD.ReadOnly = true;
             dgvCTHD.RowHeadersVisible = false;
             dgvCTHD.RowHeadersWidth = 62;
             dgvCTHD.RowTemplate.Height = 33;
-            dgvCTHD.Size = new Size(1450, 301);
-            dgvCTHD.TabIndex = 0;
+            dgvCTHD.Size = new Size(1208, 300);
+            dgvCTHD.TabIndex = 6;
             // 
             // dTOChiTietHoaDonBindingSource
             // 
             dTOChiTietHoaDonBindingSource.DataSource = typeof(DTO.DTO_ChiTietHoaDon);
             // 
-            // maHoaDonDataGridViewTextBoxColumn1
+            // label3
             // 
-            maHoaDonDataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            maHoaDonDataGridViewTextBoxColumn1.DataPropertyName = "MaHoaDon";
-            maHoaDonDataGridViewTextBoxColumn1.HeaderText = "Mã hóa đơn";
-            maHoaDonDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            maHoaDonDataGridViewTextBoxColumn1.Name = "maHoaDonDataGridViewTextBoxColumn1";
-            maHoaDonDataGridViewTextBoxColumn1.ReadOnly = true;
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(455, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(355, 48);
+            label3.TabIndex = 5;
+            label3.Text = "CHI TIẾT HÓA ĐƠN:";
+            // 
+            // maHoaDonDataGridViewTextBoxColumn
+            // 
+            maHoaDonDataGridViewTextBoxColumn.DataPropertyName = "MaHoaDon";
+            maHoaDonDataGridViewTextBoxColumn.HeaderText = "Mã hóa đơn";
+            maHoaDonDataGridViewTextBoxColumn.MinimumWidth = 8;
+            maHoaDonDataGridViewTextBoxColumn.Name = "maHoaDonDataGridViewTextBoxColumn";
+            maHoaDonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maSanPhamDataGridViewTextBoxColumn
             // 
-            maSanPhamDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             maSanPhamDataGridViewTextBoxColumn.DataPropertyName = "MaSanPham";
             maSanPhamDataGridViewTextBoxColumn.HeaderText = "Mã sản phẩm";
             maSanPhamDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -291,7 +290,6 @@
             // 
             // dgvSL
             // 
-            dgvSL.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvSL.DataPropertyName = "SoLuong";
             dgvSL.HeaderText = "Số lượng";
             dgvSL.MinimumWidth = 8;
@@ -300,28 +298,27 @@
             // 
             // dgvGia
             // 
-            dgvGia.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvGia.DataPropertyName = "DonGia";
             dgvGia.HeaderText = "Đơn giá";
             dgvGia.MinimumWidth = 8;
             dgvGia.Name = "dgvGia";
             dgvGia.ReadOnly = true;
             // 
-            // FormQLHD
+            // FormQLHD_Admin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1600, 1004);
-            Controls.Add(panel3);
+            ClientSize = new Size(1428, 1029);
             Controls.Add(panel2);
-            Name = "FormQLHD";
-            Text = "FormQLHD";
+            Controls.Add(panel1);
+            Name = "FormQLHD_Admin";
+            Text = "FormQLHD_Admin";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHD).EndInit();
             ((System.ComponentModel.ISupportInitialize)dTOHoaDonBindingSource).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCTHD).EndInit();
             ((System.ComponentModel.ISupportInitialize)dTOChiTietHoaDonBindingSource).EndInit();
             ResumeLayout(false);
@@ -329,22 +326,22 @@
 
         #endregion
 
-        private DataGridView dgvHD;
-        private BindingSource dTOHoaDonBindingSource;
+        private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
         private Label label1;
-        private DataGridView dgvCTHD;
-        private BindingSource dTOChiTietHoaDonBindingSource;
+        private BindingSource dTOHoaDonBindingSource;
+        private DataGridView dgvHD;
         private DataGridViewTextBoxColumn dgvMaHD;
         private DataGridViewTextBoxColumn ngayLapDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn maNhanVienDataGridViewTextBoxColumn;
         private DataGridViewImageColumn dgvChiTiet;
-        private Label label2;
         private Label lblMaHD;
-        private Label lblTongTien;
         private Label label3;
-        private DataGridViewTextBoxColumn maHoaDonDataGridViewTextBoxColumn1;
+        private DataGridView dgvCTHD;
+        private BindingSource dTOChiTietHoaDonBindingSource;
+        private Label label2;
+        private Label lblTongTien;
+        private DataGridViewTextBoxColumn maHoaDonDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn maSanPhamDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dgvSL;
         private DataGridViewTextBoxColumn dgvGia;
