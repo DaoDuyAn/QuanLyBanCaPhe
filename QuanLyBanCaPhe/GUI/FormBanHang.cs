@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace QuanLyBanCaPhe
 {
@@ -105,7 +106,7 @@ namespace QuanLyBanCaPhe
                 MaSP = Convert.ToInt32(id),
                 MaLoaiSP = cat,
                 GiaBan = Convert.ToInt64(price),
-                GiaBan2 = price,
+                GiaBan2 = Convert.ToInt64(price).ToString("N0"),
                 TenSP = name,
                 AnhSP = Image.FromFile(pimg),
             };
@@ -242,7 +243,7 @@ namespace QuanLyBanCaPhe
             if (dgvGioHang.Rows.Count == 0)
             {
                 MessageBox.Show("Lưu không thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                return;
             }
 
             bool themHD = busHD.themHoaDon(DateTime.Now, nv.MaNhanVien);
@@ -262,11 +263,125 @@ namespace QuanLyBanCaPhe
 
             MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            // Khai báo và khởi tạo các thành phần của các đối tượng M.O.I.Excel
+            Excel.Application exApp = new Excel.Application();
+            Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+            Excel.Range exRange = (Excel.Range)exSheet.Cells[1, 1]; // Đưa con trỏ vào ô A1
+
+            // Định dạng cho file Excel
+            exRange.Font.Bold = true;
+            exRange.Font.Size = 15;
+            exRange.Font.Color = Color.DarkRed;
+            exRange.Value = "HIGHLANDS COFFEE";
+
+            Excel.Range dc = (Excel.Range)exSheet.Cells[2, 1]; // hàng 2 cột 1
+            dc.Font.Size = 13;
+            dc.Font.Color = Color.DarkRed;
+            dc.Value = "38 Lê Lợi - Huế";
+
+            Excel.Range sdt = (Excel.Range)exSheet.Cells[3, 1]; // hàng
+            sdt.Font.Size = 13;
+            sdt.Font.Color = Color.DarkRed;
+            sdt.Value = "0235 3757 585";
+
+
+            // In chữ Hóa đơn
+            exSheet.Range["C5"].Font.Size = 20;
+            exSheet.Range["C5"].Font.Bold = true;
+            exSheet.Range["C5"].Font.Color = Color.DarkRed;
+            exSheet.Range["C5"].Value = "HÓA ĐƠN";
+
+            // In các thông tin chung
+            exSheet.Range["A6:A8"].Font.Size = 12;
+            exSheet.Range["A6"].Value = "Mã hóa đơn: " + busHD.getMaxMaHoaDon().ToString();
+            exSheet.Range["A7"].Value = "Tên nhân viên: " + nv.TenNhanVien;
+            exSheet.Range["A8"].Value = "Ngày lập: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+            // In dòng tiêu đề
+            exSheet.Range["A10:E10"].Font.Size = 12;
+            exSheet.Range["A10:E10"].Font.Bold = true;
+
+            exSheet.Range["A10"].Value = "STT";
+            exSheet.Range["A10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["B10"].Value = "Tên sản phẩm";
+            exSheet.Range["B10"].ColumnWidth = 25;
+            exSheet.Range["B10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["C10"].Value = "Số lượng";
+            exSheet.Range["C10"].ColumnWidth = 20;
+            exSheet.Range["C10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["D10"].Value = "Đơn giá";
+            exSheet.Range["D10"].ColumnWidth = 20;
+            exSheet.Range["D10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["E10"].Value = "Thành tiền";
+            exSheet.Range["E10"].ColumnWidth = 20;
+            exSheet.Range["E10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            // In chi tiết hóa đơn
+            int line = 11;
+            for (int i = 0; i < dgvGioHang.Rows.Count; ++i)
+            {
+                exSheet.Range["A" + (line).ToString()].Value = dgvGioHang.Rows[i].Cells[0].Value.ToString();
+                exSheet.Range["A" + (line).ToString()].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                exSheet.Range["B" + (line).ToString()].Value = dgvGioHang.Rows[i].Cells[2].Value.ToString();
+                exSheet.Range["B" + (line).ToString()].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                exSheet.Range["C" + (line).ToString()].Value = dgvGioHang.Rows[i].Cells[4].Value.ToString();
+                exSheet.Range["C" + (line).ToString()].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                exSheet.Range["D" + (line).ToString()].Value = long.Parse(dgvGioHang.Rows[i].Cells[3].Value.ToString()).ToString("N0") + " đ";
+                exSheet.Range["D" + (line).ToString()].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                int SL = int.Parse(dgvGioHang.Rows[i].Cells[4].Value.ToString());
+                long Gia = long.Parse(dgvGioHang.Rows[i].Cells[3].Value.ToString());
+                long ThanhTien = SL * Gia;
+
+                exSheet.Range["E" + (line).ToString()].Value = ThanhTien.ToString("N0") + " đ";
+                exSheet.Range["E" + (line).ToString()].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                line++;
+            }
+
+            line = line + dgvGioHang.Rows.Count;
+            exSheet.Range["D" + line.ToString()].Value = "Tổng tiền: " + numTongTien.Value.ToString("N0") + " đ";
+            exSheet.Range["D" + line.ToString()].Font.Bold = true;
+
+            // Đặt tên cho Sheet
+            exSheet.Name = busHD.getMaxMaHoaDon().ToString();
+
+            // Kích hoạt cho file Excel hoạt động
+            exBook.Activate();
+
+            // Lưu file Excel
+            SaveFileDialog save = new SaveFileDialog();
+
+            // Thiết lập bộ lọc cho các tệp
+            save.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                exBook.SaveAs(save.FileName.ToLower());
+            }
+
+            // Thoát khỏi ứng dụng
+            exApp.Quit();
+
+            MessageBox.Show("In thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             numTongTien.Value = 0;
             numTongSL.Value = 0;
             numCanTra.Value = 0;
             numKhachDua.Value = 0;
 
+            // Xóa giỏ hàng
             dgvGioHang.Rows.Clear();
         }
     }

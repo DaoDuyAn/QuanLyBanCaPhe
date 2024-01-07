@@ -134,6 +134,7 @@
             btnIn.TabIndex = 12;
             btnIn.Text = "In hóa đơn";
             btnIn.UseVisualStyleBackColor = false;
+            btnIn.Click += btnIn_Click;
             // 
             // lblTongTien
             // 
@@ -272,9 +273,6 @@
             dgvGioHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGioHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGioHang.BackgroundColor = Color.White;
-            dgvGioHang.BorderStyle = BorderStyle.None;
-            dgvGioHang.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dgvGioHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(81, 154, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);

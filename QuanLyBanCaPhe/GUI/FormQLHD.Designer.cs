@@ -112,6 +112,7 @@
             dgvHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvHD.RowHeadersVisible = false;
             dgvHD.RowHeadersWidth = 62;
+            dgvHD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvHD.Size = new Size(1450, 455);
             dgvHD.TabIndex = 0;
             dgvHD.CellClick += dgvHD_CellClick;
@@ -282,6 +283,7 @@
             dgvCTHD.RowHeadersVisible = false;
             dgvCTHD.RowHeadersWidth = 62;
             dgvCTHD.RowTemplate.Height = 33;
+            dgvCTHD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCTHD.Size = new Size(1450, 301);
             dgvCTHD.TabIndex = 0;
             // 
