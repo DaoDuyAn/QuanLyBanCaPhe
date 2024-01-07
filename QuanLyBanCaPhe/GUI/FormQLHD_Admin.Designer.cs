@@ -38,6 +38,7 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnTK = new Button();
             txtTimKiem = new TextBox();
@@ -108,7 +109,7 @@
             dgvHD.AllowUserToAddRows = false;
             dgvHD.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
@@ -118,7 +119,7 @@
             dgvHD.BackgroundColor = Color.White;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(81, 154, 255);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -127,9 +128,9 @@
             dgvHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHD.Columns.AddRange(new DataGridViewColumn[] { dgvMaHD, ngayLapDataGridViewTextBoxColumn, maNhanVienDataGridViewTextBoxColumn, dgvChiTiet });
             dgvHD.DataSource = dTOHoaDonBindingSource;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = Color.White;
             dataGridViewCellStyle4.SelectionForeColor = Color.Black;
@@ -139,9 +140,9 @@
             dgvHD.Location = new Point(118, 184);
             dgvHD.Name = "dgvHD";
             dgvHD.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
@@ -256,7 +257,7 @@
             dgvCTHD.AllowUserToAddRows = false;
             dgvCTHD.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = Color.White;
             dataGridViewCellStyle6.SelectionForeColor = Color.Black;
@@ -267,7 +268,7 @@
             dgvCTHD.BackgroundColor = Color.White;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = Color.White;
             dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(81, 154, 255);
             dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
@@ -276,9 +277,9 @@
             dgvCTHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCTHD.Columns.AddRange(new DataGridViewColumn[] { maHoaDonDataGridViewTextBoxColumn, maSanPhamDataGridViewTextBoxColumn, dgvSL, dgvGia });
             dgvCTHD.DataSource = dTOChiTietHoaDonBindingSource;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = Color.White;
             dataGridViewCellStyle8.SelectionForeColor = Color.Black;
@@ -288,6 +289,14 @@
             dgvCTHD.Location = new Point(118, 194);
             dgvCTHD.Name = "dgvCTHD";
             dgvCTHD.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvCTHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvCTHD.RowHeadersVisible = false;
             dgvCTHD.RowHeadersWidth = 62;
             dgvCTHD.RowTemplate.Height = 33;

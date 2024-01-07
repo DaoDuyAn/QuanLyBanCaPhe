@@ -32,6 +32,7 @@
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
             btnDX = new FontAwesome.Sharp.IconButton();
+            btnDMK = new FontAwesome.Sharp.IconButton();
             btnTK = new FontAwesome.Sharp.IconButton();
             btnQLSP = new FontAwesome.Sharp.IconButton();
             btnQLLSP = new FontAwesome.Sharp.IconButton();
@@ -64,7 +65,7 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(376, 180);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1404, 720);
+            panelDesktop.Size = new Size(1404, 768);
             panelDesktop.TabIndex = 7;
             // 
             // pictureBox1
@@ -73,7 +74,7 @@
             pictureBox1.Image = Properties.Resources.ban1;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1404, 720);
+            pictureBox1.Size = new Size(1404, 768);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -82,6 +83,7 @@
             // 
             panelMenu.BackColor = Color.FromArgb(136, 33, 6);
             panelMenu.Controls.Add(btnDX);
+            panelMenu.Controls.Add(btnDMK);
             panelMenu.Controls.Add(btnTK);
             panelMenu.Controls.Add(btnQLSP);
             panelMenu.Controls.Add(btnQLLSP);
@@ -93,7 +95,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(376, 900);
+            panelMenu.Size = new Size(376, 948);
             panelMenu.TabIndex = 4;
             // 
             // btnDX
@@ -108,7 +110,7 @@
             btnDX.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDX.IconSize = 50;
             btnDX.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDX.Location = new Point(0, 740);
+            btnDX.Location = new Point(0, 820);
             btnDX.Name = "btnDX";
             btnDX.Padding = new Padding(10, 0, 20, 0);
             btnDX.Size = new Size(376, 80);
@@ -118,6 +120,29 @@
             btnDX.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDX.UseVisualStyleBackColor = true;
             btnDX.Click += btnDX_Click;
+            // 
+            // btnDMK
+            // 
+            btnDMK.Dock = DockStyle.Top;
+            btnDMK.FlatAppearance.BorderSize = 0;
+            btnDMK.FlatStyle = FlatStyle.Flat;
+            btnDMK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDMK.ForeColor = Color.Gainsboro;
+            btnDMK.IconChar = FontAwesome.Sharp.IconChar.Key;
+            btnDMK.IconColor = Color.Gainsboro;
+            btnDMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDMK.IconSize = 50;
+            btnDMK.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDMK.Location = new Point(0, 740);
+            btnDMK.Name = "btnDMK";
+            btnDMK.Padding = new Padding(10, 0, 20, 0);
+            btnDMK.Size = new Size(376, 80);
+            btnDMK.TabIndex = 12;
+            btnDMK.Text = "Đổi mật khẩu";
+            btnDMK.TextAlign = ContentAlignment.MiddleLeft;
+            btnDMK.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDMK.UseVisualStyleBackColor = true;
+            btnDMK.Click += btnDMK_Click;
             // 
             // btnTK
             // 
@@ -140,6 +165,7 @@
             btnTK.TextAlign = ContentAlignment.MiddleLeft;
             btnTK.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTK.UseVisualStyleBackColor = true;
+            btnTK.Click += btnTK_Click;
             // 
             // btnQLSP
             // 
@@ -282,6 +308,7 @@
             btnQLTK.TextAlign = ContentAlignment.MiddleLeft;
             btnQLTK.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnQLTK.UseVisualStyleBackColor = false;
+            btnQLTK.Click += btnQLTK_Click;
             // 
             // panelLogo
             // 
@@ -380,7 +407,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1780, 900);
+            ClientSize = new Size(1780, 948);
             Controls.Add(panelDesktop);
             Controls.Add(panelShadow);
             Controls.Add(panel1);
@@ -423,5 +450,6 @@
         private FontAwesome.Sharp.IconButton btnQLCV;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label labelName;
+        private FontAwesome.Sharp.IconButton btnDMK;
     }
 }

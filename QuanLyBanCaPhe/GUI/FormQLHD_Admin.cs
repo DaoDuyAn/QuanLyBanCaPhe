@@ -50,7 +50,7 @@ namespace QuanLyBanCaPhe.GUI
                     tongTien += soLuong * donGia;
                 }
 
-                lblTongTien.Text = tongTien.ToString() + " đ";
+                lblTongTien.Text = tongTien.ToString("N0") + " đ";
             }
         }
 

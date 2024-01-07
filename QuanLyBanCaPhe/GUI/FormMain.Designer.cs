@@ -30,6 +30,7 @@
         {
             panelMenu = new Panel();
             btnDX = new FontAwesome.Sharp.IconButton();
+            btnTK = new FontAwesome.Sharp.IconButton();
             btnQLHD = new FontAwesome.Sharp.IconButton();
             btnBH = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
@@ -42,7 +43,7 @@
             panelShadow = new Panel();
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
-            btnTK = new FontAwesome.Sharp.IconButton();
+            btnDMK = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
@@ -57,6 +58,7 @@
             // 
             panelMenu.BackColor = Color.FromArgb(136, 33, 6);
             panelMenu.Controls.Add(btnDX);
+            panelMenu.Controls.Add(btnDMK);
             panelMenu.Controls.Add(btnTK);
             panelMenu.Controls.Add(btnQLHD);
             panelMenu.Controls.Add(btnBH);
@@ -79,7 +81,7 @@
             btnDX.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDX.IconSize = 50;
             btnDX.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDX.Location = new Point(0, 420);
+            btnDX.Location = new Point(0, 500);
             btnDX.Name = "btnDX";
             btnDX.Padding = new Padding(10, 0, 20, 0);
             btnDX.Size = new Size(376, 80);
@@ -89,6 +91,29 @@
             btnDX.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDX.UseVisualStyleBackColor = true;
             btnDX.Click += btnDX_Click;
+            // 
+            // btnTK
+            // 
+            btnTK.Dock = DockStyle.Top;
+            btnTK.FlatAppearance.BorderSize = 0;
+            btnTK.FlatStyle = FlatStyle.Flat;
+            btnTK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTK.ForeColor = Color.Gainsboro;
+            btnTK.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            btnTK.IconColor = Color.Gainsboro;
+            btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTK.IconSize = 50;
+            btnTK.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTK.Location = new Point(0, 340);
+            btnTK.Name = "btnTK";
+            btnTK.Padding = new Padding(10, 0, 20, 0);
+            btnTK.Size = new Size(376, 80);
+            btnTK.TabIndex = 5;
+            btnTK.Text = "Thống kê";
+            btnTK.TextAlign = ContentAlignment.MiddleLeft;
+            btnTK.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTK.UseVisualStyleBackColor = true;
+            btnTK.Click += btnTK_Click;
             // 
             // btnQLHD
             // 
@@ -252,28 +277,28 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // btnTK
+            // btnDMK
             // 
-            btnTK.Dock = DockStyle.Top;
-            btnTK.FlatAppearance.BorderSize = 0;
-            btnTK.FlatStyle = FlatStyle.Flat;
-            btnTK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTK.ForeColor = Color.Gainsboro;
-            btnTK.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
-            btnTK.IconColor = Color.Gainsboro;
-            btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTK.IconSize = 50;
-            btnTK.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTK.Location = new Point(0, 340);
-            btnTK.Name = "btnTK";
-            btnTK.Padding = new Padding(10, 0, 20, 0);
-            btnTK.Size = new Size(376, 80);
-            btnTK.TabIndex = 5;
-            btnTK.Text = "Thống kê";
-            btnTK.TextAlign = ContentAlignment.MiddleLeft;
-            btnTK.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTK.UseVisualStyleBackColor = true;
-            btnTK.Click += btnTK_Click;
+            btnDMK.Dock = DockStyle.Top;
+            btnDMK.FlatAppearance.BorderSize = 0;
+            btnDMK.FlatStyle = FlatStyle.Flat;
+            btnDMK.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDMK.ForeColor = Color.Gainsboro;
+            btnDMK.IconChar = FontAwesome.Sharp.IconChar.Key;
+            btnDMK.IconColor = Color.Gainsboro;
+            btnDMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDMK.IconSize = 50;
+            btnDMK.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDMK.Location = new Point(0, 420);
+            btnDMK.Name = "btnDMK";
+            btnDMK.Padding = new Padding(10, 0, 20, 0);
+            btnDMK.Size = new Size(376, 80);
+            btnDMK.TabIndex = 8;
+            btnDMK.Text = "Đổi mật khẩu";
+            btnDMK.TextAlign = ContentAlignment.MiddleLeft;
+            btnDMK.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDMK.UseVisualStyleBackColor = true;
+            btnDMK.Click += btnDMK_Click;
             // 
             // FormMain
             // 
@@ -318,5 +343,6 @@
         private Label labelName;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnTK;
+        private FontAwesome.Sharp.IconButton btnDMK;
     }
 }

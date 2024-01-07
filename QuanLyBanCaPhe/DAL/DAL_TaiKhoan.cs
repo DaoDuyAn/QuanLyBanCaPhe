@@ -60,6 +60,35 @@ namespace QuanLyBanCaPhe.DAL
             return tk;
         }
 
+        public DataTable getTaiKhoanByKeyWord(string TenDangNhap)
+        {
+            DataTable dtTaiKhoan = new DataTable();
+            try
+            {
+                _conn.Open();
+
+                string SQL = "SELECT * FROM TaiKhoan WHERE  TenDangNhap LIKE '%' + @TenDangNhap + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenDangNhap", TenDangNhap);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dtTaiKhoan);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dtTaiKhoan;
+        }
+
         public DTO_TaiKhoan getTKByTenDN(string TenDangNhap)
         {
             DTO_TaiKhoan tk = null;
@@ -98,6 +127,36 @@ namespace QuanLyBanCaPhe.DAL
             }
 
             return tk;
+        }
+
+        public bool doiMatKhau(string MaNhanVien, string MatKhau)
+        {
+            try
+            {
+                _conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("update TaiKhoan set MatKhau=@MatKhau where MaNhanVien=@MaNhanVien", _conn))
+                {
+                    cmd.Parameters.AddWithValue("@MatKhau", MatKhau);
+                    cmd.Parameters.AddWithValue("@MaNhanVien", MaNhanVien);
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return false;
         }
 
         public bool themTaiKhoan(string MaTaiKhoan, string TenDangNhap, string MatKhau, string MaNhanVien)

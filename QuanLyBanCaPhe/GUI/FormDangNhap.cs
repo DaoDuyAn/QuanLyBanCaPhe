@@ -61,27 +61,30 @@ namespace QuanLyBanCaPhe
             {
                 DTO_NhanVien nv = busNV.getNhanVienByMaNhanVien(tk.MaNhanVien);
 
-               if (nv.MaChucVu.Equals("CV2"))
+                if (nv.MaChucVu.Equals("CV2"))
                 {
                     FormMain formMain = new FormMain(nv);
                     formMain.Show();
                     this.Hide();
-                } else
+                }
+                else
                 {
                     FormMainAdmin formMainAdmin = new FormMainAdmin(nv);
                     formMainAdmin.Show();
                     this.Hide();
                 }
-                
 
-            } else
+
+            }
+            else
             {
                 DTO_TaiKhoan _tk = busTK.getTKByTenDN(txttdn.Text);
                 if (_tk != null)
                 {
                     MessageBox.Show("Mật khẩu không chính xác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtmk.Text = "";
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Tài khoản không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txttdn.Text = "";

@@ -125,6 +125,7 @@ namespace QuanLyBanCaPhe
                         return;
                     }
                 }
+
                 dgvGioHang.Rows.Add(new object[] { 0, wdg.MaSP, wdg.TenSP, wdg.GiaBan, 1 });
                 TinhTongTienVaSoLuong();
             };
@@ -238,6 +239,12 @@ namespace QuanLyBanCaPhe
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (dgvGioHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Lưu không thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+
             bool themHD = busHD.themHoaDon(DateTime.Now, nv.MaNhanVien);
             int maHD = busHD.getMaxMaHoaDon();
 

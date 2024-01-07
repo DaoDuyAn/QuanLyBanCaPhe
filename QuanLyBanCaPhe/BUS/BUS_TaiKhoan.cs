@@ -18,6 +18,11 @@ namespace QuanLyBanCaPhe.BUS
             return dalTaiKhoan.getAllTaiKhoan();
         }
 
+        public DataTable getTaiKhoanByKeyWord(string TenDangNhap)
+        {
+            return dalTaiKhoan.getTaiKhoanByKeyWord(TenDangNhap);
+        }
+
         public DTO_TaiKhoan kiemTraDN(string TenDangNhap, string MatKhau)
         {
             return dalTaiKhoan.kiemTraDN(TenDangNhap, MatKhau);
@@ -26,6 +31,11 @@ namespace QuanLyBanCaPhe.BUS
         public DTO_TaiKhoan getTKByTenDN(string TenDangNhap)
         {
             return dalTaiKhoan.getTKByTenDN(TenDangNhap);
+        }
+
+        public bool doiMatKhau(string MaNhanVien, string MatKhau)
+        {
+            return dalTaiKhoan.doiMatKhau(MaNhanVien, MatKhau);
         }
 
         public bool themTaiKhoan(string MaTaiKhoan, string TenDangNhap, string MatKhau, string MaNhanVien)

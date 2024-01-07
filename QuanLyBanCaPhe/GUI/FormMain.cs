@@ -142,6 +142,14 @@ namespace QuanLyBanCaPhe
 
         private void btnTK_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+            OpenChildForm(new FormThongKe(nv));
+        }
+
+        private void btnDMK_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(255, 255, 255));
+            OpenChildForm(new FormDoiMK(nv));
         }
     }
 }

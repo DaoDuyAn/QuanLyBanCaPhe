@@ -55,7 +55,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(684, 862);
+            panel1.Size = new Size(1084, 862);
             panel1.TabIndex = 1;
             // 
             // iconPictureBox1
@@ -66,7 +66,7 @@
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 50;
-            iconPictureBox1.Location = new Point(491, 566);
+            iconPictureBox1.Location = new Point(735, 560);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Padding = new Padding(2, 4, 0, 0);
             iconPictureBox1.Size = new Size(56, 50);
@@ -80,7 +80,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(159, 507);
+            label2.Location = new Point(403, 501);
             label2.Name = "label2";
             label2.Size = new Size(171, 45);
             label2.TabIndex = 7;
@@ -92,7 +92,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(159, 364);
+            label1.Location = new Point(403, 358);
             label1.Name = "label1";
             label1.Size = new Size(250, 45);
             label1.TabIndex = 6;
@@ -104,7 +104,7 @@
             btnDN.BackColor = Color.FromArgb(136, 33, 6);
             btnDN.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             btnDN.ForeColor = Color.White;
-            btnDN.Location = new Point(158, 658);
+            btnDN.Location = new Point(402, 652);
             btnDN.Name = "btnDN";
             btnDN.Size = new Size(314, 67);
             btnDN.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             txtmk.Anchor = AnchorStyles.Top;
             txtmk.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            txtmk.Location = new Point(159, 566);
+            txtmk.Location = new Point(403, 560);
             txtmk.Name = "txtmk";
             txtmk.PasswordChar = '*';
             txtmk.Size = new Size(314, 50);
@@ -126,7 +126,7 @@
             // 
             txttdn.Anchor = AnchorStyles.Top;
             txttdn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            txttdn.Location = new Point(159, 422);
+            txttdn.Location = new Point(403, 416);
             txttdn.Name = "txttdn";
             txttdn.Size = new Size(314, 50);
             txttdn.TabIndex = 2;
@@ -135,7 +135,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.Image = Properties.Resources.hl_logo;
-            pictureBox1.Location = new Point(203, 64);
+            pictureBox1.Location = new Point(422, 67);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(269, 250);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 862);
+            ClientSize = new Size(1084, 862);
             Controls.Add(panel1);
             Name = "FormDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
