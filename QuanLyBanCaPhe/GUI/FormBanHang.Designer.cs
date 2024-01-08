@@ -410,7 +410,7 @@
             Controls.Add(ProductPanel);
             Controls.Add(CategoryPanel);
             Name = "FormBanHang";
-            Text = "FormBanHang";
+            Text = "Bán hàng";
             ((System.ComponentModel.ISupportInitialize)dTOLoaiSanPhamBindingSource).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

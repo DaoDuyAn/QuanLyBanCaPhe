@@ -71,7 +71,7 @@
             dgvHD.AllowUserToAddRows = false;
             dgvHD.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
@@ -81,7 +81,7 @@
             dgvHD.BackgroundColor = Color.White;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(81, 154, 255);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -105,7 +105,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = SystemColors.Control;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
@@ -113,7 +113,7 @@
             dgvHD.RowHeadersVisible = false;
             dgvHD.RowHeadersWidth = 62;
             dgvHD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHD.Size = new Size(1450, 455);
+            dgvHD.Size = new Size(1450, 556);
             dgvHD.TabIndex = 0;
             dgvHD.CellClick += dgvHD_CellClick;
             // 
@@ -167,7 +167,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1600, 542);
+            panel2.Size = new Size(1600, 643);
             panel2.TabIndex = 7;
             // 
             // label1
@@ -189,9 +189,9 @@
             panel3.Controls.Add(label2);
             panel3.Controls.Add(dgvCTHD);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 542);
+            panel3.Location = new Point(0, 643);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1600, 462);
+            panel3.Size = new Size(1600, 361);
             panel3.TabIndex = 8;
             // 
             // label3
@@ -251,7 +251,7 @@
             dgvCTHD.BackgroundColor = Color.White;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = Color.White;
             dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(81, 154, 255);
             dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
@@ -284,8 +284,9 @@
             dgvCTHD.RowHeadersWidth = 62;
             dgvCTHD.RowTemplate.Height = 33;
             dgvCTHD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCTHD.Size = new Size(1450, 301);
+            dgvCTHD.Size = new Size(1450, 200);
             dgvCTHD.TabIndex = 0;
+            dgvCTHD.CellFormatting += dgvCTHD_CellFormatting;
             // 
             // maHoaDonDataGridViewTextBoxColumn1
             // 
@@ -335,7 +336,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Name = "FormQLHD";
-            Text = "FormQLHD";
+            Text = "Quản lý hóa đơn";
             ((System.ComponentModel.ISupportInitialize)dgvHD).EndInit();
             ((System.ComponentModel.ISupportInitialize)dTOHoaDonBindingSource).EndInit();
             panel2.ResumeLayout(false);

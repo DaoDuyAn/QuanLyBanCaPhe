@@ -77,7 +77,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1428, 502);
+            panel1.Size = new Size(1428, 593);
             panel1.TabIndex = 0;
             // 
             // btnTK
@@ -150,7 +150,7 @@
             dgvHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvHD.RowHeadersVisible = false;
             dgvHD.RowHeadersWidth = 62;
-            dgvHD.Size = new Size(1208, 291);
+            dgvHD.Size = new Size(1208, 403);
             dgvHD.TabIndex = 3;
             dgvHD.CellClick += dgvHD_CellClick;
             // 
@@ -226,9 +226,9 @@
             panel2.Controls.Add(lblMaHD);
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 502);
+            panel2.Location = new Point(0, 593);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1428, 527);
+            panel2.Size = new Size(1428, 436);
             panel2.TabIndex = 1;
             // 
             // lblTongTien
@@ -300,8 +300,9 @@
             dgvCTHD.RowHeadersVisible = false;
             dgvCTHD.RowHeadersWidth = 62;
             dgvCTHD.RowTemplate.Height = 33;
-            dgvCTHD.Size = new Size(1208, 300);
+            dgvCTHD.Size = new Size(1208, 209);
             dgvCTHD.TabIndex = 6;
+            dgvCTHD.CellFormatting += dgvCTHD_CellFormatting;
             // 
             // maHoaDonDataGridViewTextBoxColumn
             // 
@@ -358,7 +359,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormQLHD_Admin";
-            Text = "FormQLHD_Admin";
+            Text = "Quản lý hóa đơn";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHD).EndInit();

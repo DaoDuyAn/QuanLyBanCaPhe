@@ -278,7 +278,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormQLCV_Admin";
-            Text = "FormQLCV_Admin";
+            Text = "Quản lý chức vụ";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

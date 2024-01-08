@@ -189,5 +189,30 @@ namespace QuanLyBanCaPhe.GUI
                 MessageBox.Show("Không tìm thấy dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void dgvSP_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dgvSP.Columns["dgvAnhSP"].Index && e.RowIndex >= 0)
+            {
+                string imageURL = e.Value as string;
+
+                if (!string.IsNullOrEmpty(imageURL))
+                {
+                    try
+                    {
+                        Image image = Image.FromFile(imageURL);
+
+                        e.Value = image;
+                        e.FormattingApplied = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+
+            dgvSP.RowTemplate.Height = 150;
+        }
     }
 }

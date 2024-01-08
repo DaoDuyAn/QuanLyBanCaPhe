@@ -150,7 +150,7 @@
             Controls.Add(panel1);
             Name = "FormDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormDangNhap";
+            Text = "Đăng nhập";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

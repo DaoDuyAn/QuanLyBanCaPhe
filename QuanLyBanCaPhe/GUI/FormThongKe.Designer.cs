@@ -185,7 +185,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "FormThongKe";
-            Text = "FormThongKe";
+            Text = "Thống kê";
             ((System.ComponentModel.ISupportInitialize)dgvTK).EndInit();
             ((System.ComponentModel.ISupportInitialize)dTOThongKeBindingSource).EndInit();
             ResumeLayout(false);

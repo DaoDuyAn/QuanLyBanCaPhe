@@ -78,5 +78,17 @@ namespace QuanLyBanCaPhe.GUI
                 MessageBox.Show("Không tìm thấy dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void dgvCTHD_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dgvCTHD.Columns["dgvGia"].Index && e.RowIndex >= 0)
+            {
+                if (decimal.TryParse(dgvCTHD.Rows[e.RowIndex].Cells["dgvGia"].Value.ToString(), out decimal price))
+                {
+                    e.Value = price.ToString("N0") + " đ";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
     }
 }

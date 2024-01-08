@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             dgvSP = new DataGridView();
             maSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tenSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            anhSanPhamDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dgvAnhSP = new DataGridViewImageColumn();
             giaBanDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             maLoaiSPDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dTOSanPhamBindingSource = new BindingSource(components);
@@ -70,29 +71,37 @@
             dgvSP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dgvSP.AutoGenerateColumns = false;
             dgvSP.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSP.Columns.AddRange(new DataGridViewColumn[] { maSanPhamDataGridViewTextBoxColumn, tenSanPhamDataGridViewTextBoxColumn, anhSanPhamDataGridViewTextBoxColumn, giaBanDataGridViewTextBoxColumn, maLoaiSPDataGridViewTextBoxColumn });
+            dgvSP.Columns.AddRange(new DataGridViewColumn[] { maSanPhamDataGridViewTextBoxColumn, tenSanPhamDataGridViewTextBoxColumn, dgvAnhSP, giaBanDataGridViewTextBoxColumn, maLoaiSPDataGridViewTextBoxColumn });
             dgvSP.DataSource = dTOSanPhamBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvSP.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvSP.DefaultCellStyle = dataGridViewCellStyle8;
             dgvSP.EnableHeadersVisualStyles = false;
             dgvSP.Location = new Point(88, 543);
             dgvSP.Name = "dgvSP";
             dgvSP.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvSP.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvSP.RowHeadersVisible = false;
             dgvSP.RowHeadersWidth = 62;
             dgvSP.RowTemplate.Height = 33;
@@ -100,6 +109,7 @@
             dgvSP.Size = new Size(1407, 381);
             dgvSP.TabIndex = 0;
             dgvSP.CellClick += dgvSP_CellClick;
+            dgvSP.CellFormatting += dgvSP_CellFormatting;
             // 
             // maSanPhamDataGridViewTextBoxColumn
             // 
@@ -119,14 +129,17 @@
             tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
             tenSanPhamDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // anhSanPhamDataGridViewTextBoxColumn
+            // dgvAnhSP
             // 
-            anhSanPhamDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            anhSanPhamDataGridViewTextBoxColumn.DataPropertyName = "AnhSanPham";
-            anhSanPhamDataGridViewTextBoxColumn.HeaderText = "Ảnh sản phẩm";
-            anhSanPhamDataGridViewTextBoxColumn.MinimumWidth = 8;
-            anhSanPhamDataGridViewTextBoxColumn.Name = "anhSanPhamDataGridViewTextBoxColumn";
-            anhSanPhamDataGridViewTextBoxColumn.ReadOnly = true;
+            dgvAnhSP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvAnhSP.DataPropertyName = "AnhSanPham";
+            dgvAnhSP.HeaderText = "Ảnh sản phẩm";
+            dgvAnhSP.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dgvAnhSP.MinimumWidth = 8;
+            dgvAnhSP.Name = "dgvAnhSP";
+            dgvAnhSP.ReadOnly = true;
+            dgvAnhSP.Resizable = DataGridViewTriState.True;
+            dgvAnhSP.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // giaBanDataGridViewTextBoxColumn
             // 
@@ -377,7 +390,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormQLSP_Admin";
-            Text = "FormQLSP_Admin";
+            Text = "Quản lý sản phẩm";
             ((System.ComponentModel.ISupportInitialize)dgvSP).EndInit();
             ((System.ComponentModel.ISupportInitialize)dTOSanPhamBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)picAnh).EndInit();
@@ -403,16 +416,16 @@
         private Button btnThem;
         private Button btnSua;
         private Panel panel1;
-        private DataGridViewTextBoxColumn maSanPhamDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn anhSanPhamDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn maLoaiSPDataGridViewTextBoxColumn;
         private Panel panel2;
         private Button btnXoa;
         private ComboBox cbbMaLoaiSP;
         private Button btnNapDS;
         private Button btnTK;
         private TextBox txtTimKiem;
+        private DataGridViewTextBoxColumn maSanPhamDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
+        private DataGridViewImageColumn dgvAnhSP;
+        private DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn maLoaiSPDataGridViewTextBoxColumn;
     }
 }

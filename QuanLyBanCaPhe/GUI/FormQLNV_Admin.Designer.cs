@@ -51,12 +51,12 @@
             txtTimKiem = new TextBox();
             panel2 = new Panel();
             dgvNV = new DataGridView();
-            dTONhanVienBindingSource = new BindingSource(components);
             dgvMaNV = new DataGridViewTextBoxColumn();
             tenNhanVienDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ngaySinhDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             gioiTinhDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             maChucVuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dTONhanVienBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNV).BeginInit();
@@ -329,10 +329,6 @@
             dgvNV.TabIndex = 0;
             dgvNV.CellClick += dgvNV_CellClick;
             // 
-            // dTONhanVienBindingSource
-            // 
-            dTONhanVienBindingSource.DataSource = typeof(DTO.DTO_NhanVien);
-            // 
             // dgvMaNV
             // 
             dgvMaNV.DataPropertyName = "MaNhanVien";
@@ -373,6 +369,10 @@
             maChucVuDataGridViewTextBoxColumn.Name = "maChucVuDataGridViewTextBoxColumn";
             maChucVuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dTONhanVienBindingSource
+            // 
+            dTONhanVienBindingSource.DataSource = typeof(DTO.DTO_NhanVien);
+            // 
             // FormQLNV_Admin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -381,7 +381,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormQLNV_Admin";
-            Text = "FormQLNV_Admin";
+            Text = "Quản lý nhân viên";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

@@ -102,7 +102,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormDoiMK";
-            Text = "FormDoiMK";
+            Text = "Đổi mật khẩu";
             ResumeLayout(false);
             PerformLayout();
         }

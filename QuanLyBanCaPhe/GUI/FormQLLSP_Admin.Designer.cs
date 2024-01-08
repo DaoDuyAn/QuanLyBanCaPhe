@@ -45,9 +45,9 @@
             txtTimKiem = new TextBox();
             panel2 = new Panel();
             dgvLSP = new DataGridView();
-            dTOLoaiSanPhamBindingSource = new BindingSource(components);
             maLoaiSPDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tenLoaiSPDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dTOLoaiSanPhamBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLSP).BeginInit();
@@ -250,10 +250,6 @@
             dgvLSP.TabIndex = 0;
             dgvLSP.CellClick += dgvLSP_CellClick;
             // 
-            // dTOLoaiSanPhamBindingSource
-            // 
-            dTOLoaiSanPhamBindingSource.DataSource = typeof(DTO.DTO_LoaiSanPham);
-            // 
             // maLoaiSPDataGridViewTextBoxColumn
             // 
             maLoaiSPDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiSP";
@@ -270,6 +266,10 @@
             tenLoaiSPDataGridViewTextBoxColumn.Name = "tenLoaiSPDataGridViewTextBoxColumn";
             tenLoaiSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dTOLoaiSanPhamBindingSource
+            // 
+            dTOLoaiSanPhamBindingSource.DataSource = typeof(DTO.DTO_LoaiSanPham);
+            // 
             // FormQLLSP_Admin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -278,7 +278,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormQLLSP_Admin";
-            Text = "FormQLLSP_Admin";
+            Text = "Quản lý loại sản phẩm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

@@ -297,36 +297,39 @@ namespace QuanLyBanCaPhe
             exSheet.Range["C5"].Value = "HÓA ĐƠN";
 
             // In các thông tin chung
-            exSheet.Range["A6:A8"].Font.Size = 12;
+            exSheet.Range["A6:A9"].Font.Size = 12;
             exSheet.Range["A6"].Value = "Mã hóa đơn: " + busHD.getMaxMaHoaDon().ToString();
             exSheet.Range["A7"].Value = "Tên nhân viên: " + nv.TenNhanVien;
             exSheet.Range["A8"].Value = "Ngày lập: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
+            exSheet.Range["A9"].Value = "Tổng tiền: " + numTongTien.Value.ToString("N0") + " đ";
+            exSheet.Range["A9"].Font.Bold = true;
+
             // In dòng tiêu đề
-            exSheet.Range["A10:E10"].Font.Size = 12;
-            exSheet.Range["A10:E10"].Font.Bold = true;
+            exSheet.Range["A11:E11"].Font.Size = 12;
+            exSheet.Range["A11:E11"].Font.Bold = true;
 
-            exSheet.Range["A10"].Value = "STT";
-            exSheet.Range["A10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["A11"].Value = "STT";
+            exSheet.Range["A11"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["B10"].Value = "Tên sản phẩm";
-            exSheet.Range["B10"].ColumnWidth = 25;
-            exSheet.Range["B10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["B11"].Value = "Tên sản phẩm";
+            exSheet.Range["B11"].ColumnWidth = 25;
+            exSheet.Range["B11"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["C10"].Value = "Số lượng";
-            exSheet.Range["C10"].ColumnWidth = 20;
-            exSheet.Range["C10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["C11"].Value = "Số lượng";
+            exSheet.Range["C11"].ColumnWidth = 20;
+            exSheet.Range["C11"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["D10"].Value = "Đơn giá";
-            exSheet.Range["D10"].ColumnWidth = 20;
-            exSheet.Range["D10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["D11"].Value = "Đơn giá";
+            exSheet.Range["D11"].ColumnWidth = 20;
+            exSheet.Range["D11"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["E10"].Value = "Thành tiền";
-            exSheet.Range["E10"].ColumnWidth = 20;
-            exSheet.Range["E10"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["E11"].Value = "Thành tiền";
+            exSheet.Range["E11"].ColumnWidth = 20;
+            exSheet.Range["E11"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
             // In chi tiết hóa đơn
-            int line = 11;
+            int line = 12;
             for (int i = 0; i < dgvGioHang.Rows.Count; ++i)
             {
                 exSheet.Range["A" + (line).ToString()].Value = dgvGioHang.Rows[i].Cells[0].Value.ToString();
@@ -350,10 +353,7 @@ namespace QuanLyBanCaPhe
 
                 line++;
             }
-
-            line = line + dgvGioHang.Rows.Count;
-            exSheet.Range["D" + line.ToString()].Value = "Tổng tiền: " + numTongTien.Value.ToString("N0") + " đ";
-            exSheet.Range["D" + line.ToString()].Font.Bold = true;
+           
 
             // Đặt tên cho Sheet
             exSheet.Name = busHD.getMaxMaHoaDon().ToString();

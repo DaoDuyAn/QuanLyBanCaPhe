@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnTK = new Button();
+            txtTimKiem = new TextBox();
             btnNapDS = new Button();
             btnXoa = new Button();
             btnThem = new Button();
@@ -52,8 +54,6 @@
             dgvMK = new DataGridViewTextBoxColumn();
             maNhanVienDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dTOTaiKhoanBindingSource = new BindingSource(components);
-            btnTK = new Button();
-            txtTimKiem = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTK).BeginInit();
@@ -82,6 +82,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1333, 412);
             panel1.TabIndex = 0;
+            // 
+            // btnTK
+            // 
+            btnTK.Anchor = AnchorStyles.Top;
+            btnTK.BackColor = Color.FromArgb(235, 84, 81);
+            btnTK.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTK.ForeColor = Color.White;
+            btnTK.Location = new Point(792, 49);
+            btnTK.Name = "btnTK";
+            btnTK.Size = new Size(183, 48);
+            btnTK.TabIndex = 45;
+            btnTK.Text = "Tìm kiếm";
+            btnTK.UseVisualStyleBackColor = false;
+            btnTK.Click += btnTK_Click;
+            // 
+            // txtTimKiem
+            // 
+            txtTimKiem.Anchor = AnchorStyles.Top;
+            txtTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTimKiem.Location = new Point(331, 54);
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.PlaceholderText = "Nhập tên đăng nhập...";
+            txtTimKiem.Size = new Size(442, 39);
+            txtTimKiem.TabIndex = 44;
             // 
             // btnNapDS
             // 
@@ -238,37 +262,37 @@
             dgvTK.AutoGenerateColumns = false;
             dgvTK.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTK.BackgroundColor = Color.White;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(81, 154, 255);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvTK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(81, 154, 255);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvTK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvTK.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTK.Columns.AddRange(new DataGridViewColumn[] { maTaiKhoanDataGridViewTextBoxColumn, tenDangNhapDataGridViewTextBoxColumn, dgvMK, maNhanVienDataGridViewTextBoxColumn });
             dgvTK.DataSource = dTOTaiKhoanBindingSource;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvTK.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvTK.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTK.EnableHeadersVisualStyles = false;
             dgvTK.Location = new Point(99, 44);
             dgvTK.Name = "dgvTK";
             dgvTK.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvTK.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvTK.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvTK.RowHeadersVisible = false;
             dgvTK.RowHeadersWidth = 62;
             dgvTK.RowTemplate.Height = 33;
@@ -314,30 +338,6 @@
             // 
             dTOTaiKhoanBindingSource.DataSource = typeof(DTO.DTO_TaiKhoan);
             // 
-            // btnTK
-            // 
-            btnTK.Anchor = AnchorStyles.Top;
-            btnTK.BackColor = Color.FromArgb(235, 84, 81);
-            btnTK.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTK.ForeColor = Color.White;
-            btnTK.Location = new Point(792, 49);
-            btnTK.Name = "btnTK";
-            btnTK.Size = new Size(183, 48);
-            btnTK.TabIndex = 45;
-            btnTK.Text = "Tìm kiếm";
-            btnTK.UseVisualStyleBackColor = false;
-            btnTK.Click += btnTK_Click;
-            // 
-            // txtTimKiem
-            // 
-            txtTimKiem.Anchor = AnchorStyles.Top;
-            txtTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTimKiem.Location = new Point(331, 54);
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PlaceholderText = "Nhập tên đăng nhập...";
-            txtTimKiem.Size = new Size(442, 39);
-            txtTimKiem.TabIndex = 44;
-            // 
             // FormQLTK_Admin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -346,7 +346,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormQLTK_Admin";
-            Text = "FormQLTK_Admin";
+            Text = "Quản lý tài khoản";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

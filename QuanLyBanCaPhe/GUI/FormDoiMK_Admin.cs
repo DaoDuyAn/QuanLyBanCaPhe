@@ -30,6 +30,12 @@ namespace QuanLyBanCaPhe.GUI
 
         private void btnDMK_Click(object sender, EventArgs e)
         {
+            if (txtMKM.Text == "" || txtNL.Text == "")
+            {
+                MessageBox.Show("Bạn cần điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (txtMKM.Text != txtNL.Text)
             {
                 MessageBox.Show("Mật khẩu mới và nhập lại mật khẩu không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
