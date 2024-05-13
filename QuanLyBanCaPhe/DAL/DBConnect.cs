@@ -9,6 +9,6 @@ namespace QuanLyBanCaPhe.DAL
 {
     public class DBConnect
     {
-        protected SqlConnection _conn = new SqlConnection("Server=DESKTOP-32ITQVJ\\SQLEXPRESS;Database=QuanLyBanCaPhe;User ID=sa;Password=andao882001;TrustServerCertificate=True");
+        protected SqlConnection _conn = new SqlConnection("Server=LAPCN-DUYAN\\SQLEXPRESS;Database=QuanLyBanCaPhe;User ID=sa;Password=123;TrustServerCertificate=True"); 
     }
 }

@@ -169,4 +169,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ScriptDB\" />
+  </ItemGroup>
+
 </Project>
